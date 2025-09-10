@@ -71,11 +71,11 @@ Session state stores the RAG instance and chat history across interactions.
 
 ## 🛠 Requirements
 
-Recommended Python: 3.10–3.11 (3.13 is bleeding-edge and some libs may lag)
+**Recommended Python:** 3.10–3.11 (3.13 is bleeding-edge and some libs may lag)
 
-OpenAI API key (for embeddings + model)
+**OpenAI API key** (for embeddings + model)
 
-requirements.txt (example):
+**requirements.txt** (example):
 
 streamlit==1.32.2  
 pandas==2.2.2  
@@ -157,25 +157,23 @@ chroma_path = "./chroma_db" (persistent vector store directory)
 
 ## 🖥 Using InsightForge
 
-Choose data source
+1) Choose data source
 
-Upload your sales_data.csv (columns like Date, Product, Region, Sales, Customer_Age, Customer_Gender, Customer_Satisfaction)
+2) Upload your sales_data.csv (columns like Date, Product, Region, Sales, Customer_Age, Customer_Gender, Customer_Satisfaction) or use the Sample Data generator.
 
-or use the Sample Data generator.
+3) Explore the dashboard
 
-Explore the dashboard
+4) KPIs: total records, total sales, average sale, product count.
 
-KPIs: total records, total sales, average sale, product count.
+5) Visuals: time trends, product & region performance, demographics, satisfaction, correlation heatmap.
 
-Visuals: time trends, product & region performance, demographics, satisfaction, correlation heatmap.
+6) AI-Powered Insights
 
-AI-Powered Insights
+7) Executive Summary: click to generate a structured, C-level overview.
 
-Executive Summary: click to generate a structured, C-level overview.
+8) Model Evaluation: run quick checks over a few predefined questions.
 
-Model Evaluation: run quick checks over a few predefined questions.
-
-Chat with Memory:
+9) Chat with Memory:
 
 Pick a predefined question and click Use Selected, or type your own.
 
