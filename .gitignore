@@ -1,0 +1,5 @@
+# Environment variables
+.env
+
+# Chroma database folder
+chroma_db/
