@@ -1,9 +1,9 @@
-InsightForge — AI-Powered Business Intelligence Assistant
+# InsightForge — AI-Powered Business Intelligence Assistant
 
 Turn your raw sales data into clear, actionable insights. InsightForge combines pandas analytics, interactive Plotly charts, and an LLM + RAG pipeline (LangChain + OpenAI) with conversational memory in a clean Streamlit UI.
 
 
-✨ Highlights
+## ✨ Highlights
 
 Plug-and-play data: Upload a CSV or use generated sample data.
 
@@ -20,7 +20,8 @@ Memory: Chat retains conversation history for follow-ups and context-aware answe
 Model eval: Quick smoke tests with QAEvalChain (when available).
 
 
-🧱 Architecture
+## 🧱 Architecture
+```
 InsightForge/
 ├─ main.py                  # Streamlit entrypoint
 ├─ config.py                # Central config (UI, model, paths, etc.)
@@ -31,10 +32,11 @@ InsightForge/
 ├─ sales_data.csv           # (optional) sample/input data
 ├─ .env                     # (not committed) holds OPENAI_API_KEY
 └─ chroma_db/               # (git-ignored) persistent Chroma vector store
+```
 
-Key flows
+**Key flows**
 
-Data pipeline (data_handler.py)
+**Data pipeline (data_handler.py)**
 
 Loads CSV (or generates realistic sample data).
 
@@ -44,7 +46,7 @@ Produces rich aggregates: sales performance, product/region analysis, demographi
 
 Note: Period indexes (Month/Quarter) are converted to str to avoid JSON serialization issues.
 
-RAG pipeline (ai_system.py)
+**RAG pipeline (ai_system.py)**
 
 Converts processed analytics to documents.
 
@@ -56,7 +58,7 @@ ConversationalRetrievalChain + ConversationBufferMemory enables chat with memory
 
 Executive summaries via LLMChain + prompt templates.
 
-UI (ui_components.py)
+**UI (ui_components.py)**
 
 Sidebar: data source & display toggles.
 
@@ -67,7 +69,7 @@ AI-Powered Insights: Executive summary, model evaluation, and a chat pane with p
 Session state stores the RAG instance and chat history across interactions.
 
 
-🛠 Requirements
+## 🛠 Requirements
 
 Recommended Python: 3.10–3.11 (3.13 is bleeding-edge and some libs may lag)
 
@@ -95,9 +97,9 @@ chromadb>=0.5.5
 Why Chroma? We default to Chroma for vector search to avoid FAISS install headaches on Windows. Chroma persists locally and works out of the box with OpenAI embeddings.
 
 
-🚀 Quickstart
+## 🚀 Quickstart
 1) Clone
-git clone https://github.com/<your-username>/insightforge.git
+git clone https://github.com/<your-username>/InsightForge
 cd insightforge
 
 2) Create & activate a virtual environment (Windows)
@@ -123,17 +125,16 @@ OPENAI_API_KEY=sk-********************************
 streamlit run main.py
 
 
-Open the URL Streamlit prints (usually http://localhost:8501
-).
+Open the URL Streamlit prints (usually http://localhost:8501)
 
 
-⚙️ Configuration
+## ⚙️ Configuration
 
-config.py centralizes settings:
+**config.py centralizes settings:**
 
-OPENAI_API_KEY: loaded from .env via python-dotenv.
+**OPENAI_API_KEY:** loaded from .env via python-dotenv.
 
-Model & generation:
+**Model & generation:**
 
 model_name = "gpt-4o-mini"
 
@@ -141,7 +142,7 @@ llm_temperature = 0.1
 
 max_tokens = 2000
 
-Embeddings & RAG:
+**Embeddings & RAG:**
 
 chunk_size = 1000
 
@@ -149,12 +150,12 @@ chunk_overlap = 200
 
 chroma_path = "./chroma_db" (persistent vector store directory)
 
-Charts: chart_height, color_palette
+**Charts:** chart_height, color_palette
 
-Sample data controls: sample_data_size, demo categories.
+**Sample data controls:** sample_data_size, demo categories.
 
 
-🖥 Using InsightForge
+## 🖥 Using InsightForge
 
 Choose data source
 
@@ -181,9 +182,9 @@ Pick a predefined question and click Use Selected, or type your own.
 The assistant remembers prior Q&A to enable context-aware follow ups.
 
 
-🧠 Prompts & Memory
+## 🧠 Prompts & Memory
 
-Analysis Prompt guides the model to:
+**Analysis Prompt guides the model to:**
 
 Use retrieved context + prior chat history
 
@@ -191,23 +192,23 @@ Produce well-formatted insights (with spacing rules to avoid “1.38million” i
 
 Provide trends, recommendations, and risks
 
-Executive Summary Prompt:
+**Executive Summary Prompt:**
 
 Delivers an exec-friendly structure with bullet points and clean formatting.
 
-Memory:
+**Memory:**
 
 ConversationBufferMemory keeps chat_history so responses become more relevant across turns.
 
 
-🧪 Model Evaluation
+## 🧪 Model Evaluation
 
 Optional QAEvalChain support (depends on your LangChain build).
 
 A small harness runs 2–3 test questions and reports a simple success rate—good for quick health checks.
 
 
-🧩 Troubleshooting
+## 🧩 Troubleshooting
 
 “OpenAI API key is not set…”
 Make sure .env exists and your venv is activated:
@@ -248,7 +249,7 @@ Resetting the vector store
 Delete the chroma_db/ folder (while the app is stopped) to rebuild from scratch.
 
 
-📈 Roadmap
+## 📈 Roadmap
 
 Forecasting + scenario analysis (and render predicted lines on charts)
 
@@ -263,7 +264,7 @@ Role-based prompts (analyst vs exec vs marketer)
 Exportable reports (PDF/HTML)
 
 
-🔒 Notes
+## 🔒 Notes
 
 Do not commit secrets: add .env and chroma_db/ to .gitignore.
 
@@ -278,7 +279,7 @@ chroma_db/
 .streamlit/
 
 
-🙌 Acknowledgements
+## 🙌 Acknowledgements
 
 Streamlit
  — rapid data apps
