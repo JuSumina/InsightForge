@@ -77,21 +77,21 @@ OpenAI API key (for embeddings + model)
 
 requirements.txt (example):
 
-streamlit==1.32.2
-pandas==2.2.2
-numpy==1.26.4
-plotly==5.22.0
-langchain>=0.3.0,<0.4
-langchain-community>=0.3.0,<0.4
-langchain-openai>=0.2.0,<0.3
-openai>=1.44.0
-tiktoken==0.7.0
-python-dotenv==1.0.1
-scikit-learn==1.5.2
-langchain-text-splitters>=0.3.0,<0.4
-regex>=2024.5.15
-pyarrow==16.1.0
-chromadb>=0.5.5
+streamlit==1.32.2  
+pandas==2.2.2  
+numpy==1.26.4  
+plotly==5.22.0  
+langchain>=0.3.0,<0.4  
+langchain-community>=0.3.0,<0.4  
+langchain-openai>=0.2.0,<0.3  
+openai>=1.44.0  
+tiktoken==0.7.0  
+python-dotenv==1.0.1  
+scikit-learn==1.5.2  
+langchain-text-splitters>=0.3.0,<0.4  
+regex>=2024.5.15  
+pyarrow==16.1.0  
+chromadb>=0.5.5  
 
 
 Why Chroma? We default to Chroma for vector search to avoid FAISS install headaches on Windows. Chroma persists locally and works out of the box with OpenAI embeddings.
@@ -99,7 +99,7 @@ Why Chroma? We default to Chroma for vector search to avoid FAISS install headac
 
 ## 🚀 Quickstart
 1) Clone
-git clone https://github.com/<your-username>/InsightForge
+git clone https://github.com/JuSumina/InsightForge
 cd insightforge
 
 2) Create & activate a virtual environment (Windows)
@@ -210,21 +210,21 @@ A small harness runs 2–3 test questions and reports a simple success rate—go
 
 ## 🧩 Troubleshooting
 
-“OpenAI API key is not set…”
+“OpenAI API key is not set…”  
 Make sure .env exists and your venv is activated:
 
 Run python -c "import os; print(os.getenv('OPENAI_API_KEY'))" → should print a key.
 
 Restart Streamlit after changes.
 
-“Could not import faiss…”
+“Could not import faiss…”  
 We don’t use FAISS by default. The code uses Chroma. Ensure:
 
 chromadb is installed
 
 You’re not forcing a FAISS backend elsewhere.
 
-Chroma “onnxruntime not installed”
+Chroma “onnxruntime not installed”  
 If Chroma tries to auto-select local embedding models, install:
 
 pip install onnxruntime
@@ -232,20 +232,20 @@ pip install onnxruntime
 
 (Not required if you pass OpenAIEmbeddings as in this project.)
 
-Weird spacing like 1.38million
+Weird spacing like 1.38million  
 The prompts and a lightweight normalization step reduce this. If you paste model output manually elsewhere, formatting may vary—prefer the in-app rendering.
 
-LangChain deprecation: Chain.__call__
+LangChain deprecation: Chain.__call__  
 We use .invoke({...}) on chains (e.g., conversational_chain.invoke({"question": ...})). If you add new chains, avoid .run() or direct calls.
 
-Wrong environment
+Wrong environment  
 Most “module not found” errors come from installing packages in one shell/venv and running in another. Always:
 
 Activate venv before installing and running.
 
 which python / where python to confirm you’re using the venv interpreter.
 
-Resetting the vector store
+Resetting the vector store  
 Delete the chroma_db/ folder (while the app is stopped) to rebuild from scratch.
 
 
@@ -281,17 +281,17 @@ chroma_db/
 
 ## 🙌 Acknowledgements
 
-Streamlit
+Streamlit  
  — rapid data apps
 
-Plotly
+Plotly  
  — interactive charts
 
-LangChain
+LangChain  
  — LLM orchestration, RAG chains
 
-Chroma
+Chroma  
  — local, persistent vector store
 
-OpenAI
+OpenAI  
  — chat + embeddings
