@@ -1,0 +1,16 @@
+streamlit==1.32.2
+pandas==2.2.2
+numpy==1.26.4
+plotly==5.22.0
+langchain>=0.3.0,<0.4
+langchain-community>=0.3.0,<0.4
+langchain-openai>=0.2.0,<0.3
+openai>=1.44.0
+tiktoken==0.7.0
+python-dotenv==1.0.1
+chromadb>=0.4.24,<0.5
+scikit-learn==1.5.2
+pyarrow==16.1.0
+regex>=2024.5.15
+zstandard>=0.23.0
+jiter>=0.6.1,<1.0

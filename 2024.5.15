@@ -1,0 +1,12 @@
+Collecting pyarrow==16.1.0
+  Downloading pyarrow-16.1.0-cp311-cp311-win_amd64.whl.metadata (3.1 kB)
+Requirement already satisfied: regex in c:\users\jusum\insightforge\insightforge_env\lib\site-packages (2025.9.1)
+Requirement already satisfied: numpy>=1.16.6 in c:\users\jusum\insightforge\insightforge_env\lib\site-packages (from pyarrow==16.1.0) (1.26.4)
+Downloading pyarrow-16.1.0-cp311-cp311-win_amd64.whl (25.9 MB)
+   ---------------------------------------- 25.9/25.9 MB 37.2 MB/s  0:00:00
+Installing collected packages: pyarrow
+  Attempting uninstall: pyarrow
+    Found existing installation: pyarrow 21.0.0
+    Uninstalling pyarrow-21.0.0:
+      Successfully uninstalled pyarrow-21.0.0
+Successfully installed pyarrow-16.1.0
